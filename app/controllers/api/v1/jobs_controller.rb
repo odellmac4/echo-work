@@ -4,6 +4,7 @@ class Api::V1::JobsController < ApplicationController
     jobs = params[:job_ids].map do |job_id|
       job_data = service.get_code_signal_job(job_id)
       job = service.process_and_save(job_data)
+      CreatePostsJob.perform_async(job.id)
     end
 
     if jobs.present?
