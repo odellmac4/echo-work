@@ -139,5 +139,8 @@ class Home extends React.Component {
 }
 
 
-const home = ReactDOM.createRoot(document.getElementById("home-container"));
-home.render(<Home/>);
+const home = document.getElementById("home-container");
+if (home) {
+  const homeRoot = ReactDOM.createRoot(home);
+  homeRoot.render(<Home />);
+}
