@@ -13,6 +13,7 @@ class JobsService
 
   def process_and_save(job_data)
     return unless job_data
+    # Refactor to use find_or_create_by to check if a job with the same title and company already exists
 
     Job.create!(
       job_title: job_data[:title],
