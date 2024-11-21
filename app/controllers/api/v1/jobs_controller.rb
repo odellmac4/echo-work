@@ -5,8 +5,9 @@ class Api::V1::JobsController < ApplicationController
       job_data = service.get_code_signal_job(job_id)
       job = service.process_and_save(job_data)
       CreatePostsJob.perform_async(job.id)
+      job
     end
-
+    
     if jobs.present?
       render json: jobs.as_json, status: :created
     else
