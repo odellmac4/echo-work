@@ -252,6 +252,8 @@ GEM
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
     securerandom (0.3.2)
+    shoulda-matchers (6.4.0)
+      activesupport (>= 5.2.0)
     sidekiq (7.3.6)
       connection_pool (>= 2.3.0)
       logger
@@ -317,6 +319,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.1.4)
   rspec-rails
+  shoulda-matchers
   sidekiq (~> 7.3)
   sprockets-rails
   stimulus-rails
