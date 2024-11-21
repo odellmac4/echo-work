@@ -7,6 +7,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+  namespace :api do
+    namespace :v1 do
+      resources :jobs do
+        collection do
+          post :import
+        end
+      end
+    end
+  end
 
   get "/home", to: "home#index"
   get "/login", to: "login#index"
