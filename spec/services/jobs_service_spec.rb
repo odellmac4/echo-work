@@ -40,13 +40,21 @@ RSpec.describe JobsService do
         saved_job = service.process_and_save(job_data)
 
         job = Job.find(saved_job.id)
-
         expect(job).to be_a Job
         expect(job.job_title).to eq job_data[:title]
         expect(job.company_name).to eq job_data[:company_name]
         expect(job.salary).to eq job_data[:salary]
         expect(job.full_time).to eq true
         expect(job.contract).to eq false
+        expect(job.location).to eq job_data[:location]
+        expect(job.date_posted).to eq job_data[:created]
+        expect(job.industry).to eq job_data.dig(
+          :job_industry_collection, 
+          0, 
+          :job_industry_list, 
+          :industry
+        )
+        expect(job.qualifications).to eq job_data.dig(:job_functions_collection, 0)
       end
     end
   end

@@ -13,7 +13,6 @@ class JobsService
 
   def process_and_save(job_data)
     return unless job_data
-    # Refactor to use find_or_create_by to check if a job with the same title and company already exists
 
     Job.create!(
       job_title: job_data[:title],
@@ -21,7 +20,16 @@ class JobsService
       job_description: job_data[:description],
       salary: job_data[:salary],
       full_time: job_data[:employment_type].downcase.include?("full"),
-      contract: job_data[:employment_type].downcase.include?("contract")
+      contract: job_data[:employment_type].downcase.include?("contract"),
+      location: job_data[:location],
+      date_posted: job_data[:created],
+      industry: job_data.dig(
+        :job_industry_collection, 
+        0, 
+        :job_industry_list, 
+        :industry
+      ),
+      qualifications: job_data.dig(:job_functions_collection, 0)
       )
   end
 end
