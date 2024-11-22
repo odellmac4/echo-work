@@ -42,8 +42,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_20_223606) do
   create_table "posts", force: :cascade do |t|
     t.bigint "job_id", null: false
     t.string "post_text"
-    t.integer "likes"
-    t.integer "dislikes"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_posts_on_job_id"
