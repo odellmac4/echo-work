@@ -37,6 +37,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_20_223606) do
     t.string "location"
     t.string "date_posted"
     t.string "industry"
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_jobs_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
