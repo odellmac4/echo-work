@@ -1087,7 +1087,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher.useContext(Context);
         }
-        function useState2(initialState) {
+        function useState(initialState) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
@@ -1099,7 +1099,7 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect2(create, deps) {
+        function useEffect(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create, deps);
         }
@@ -1882,7 +1882,7 @@ var require_react_development = __commonJS({
         exports.useContext = useContext;
         exports.useDebugValue = useDebugValue;
         exports.useDeferredValue = useDeferredValue;
-        exports.useEffect = useEffect2;
+        exports.useEffect = useEffect;
         exports.useId = useId;
         exports.useImperativeHandle = useImperativeHandle;
         exports.useInsertionEffect = useInsertionEffect;
@@ -1890,7 +1890,7 @@ var require_react_development = __commonJS({
         exports.useMemo = useMemo;
         exports.useReducer = useReducer;
         exports.useRef = useRef;
-        exports.useState = useState2;
+        exports.useState = useState;
         exports.useSyncExternalStore = useSyncExternalStore;
         exports.useTransition = useTransition;
         exports.version = ReactVersion;
@@ -2386,9 +2386,9 @@ var require_react_dom_development = __commonJS({
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
         }
-        var React4 = require_react();
+        var React3 = require_react();
         var Scheduler = require_scheduler();
-        var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         var suppressWarning = false;
         function setSuppressWarning(newSuppressWarning) {
           {
@@ -3995,7 +3995,7 @@ var require_react_dom_development = __commonJS({
           {
             if (props.value == null) {
               if (typeof props.children === "object" && props.children !== null) {
-                React4.Children.forEach(props.children, function(child) {
+                React3.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -26236,50 +26236,6 @@ var homeContainer = document.getElementById("home-container");
 if (homeContainer) {
   const homeRoot = import_client2.default.createRoot(homeContainer);
   homeRoot.render(/* @__PURE__ */ import_react2.default.createElement(Home, null));
-}
-
-// app/javascript/components/PostShow.jsx
-var import_react3 = __toESM(require_react());
-var import_client3 = __toESM(require_client());
-function CommentList(loadedPost) {
-  return loadedPost.comments.map(
-    (comment, index) => (
-      // <div key={index}>
-      //   <div className="chat chat-start">
-      //     <div className="chat-bubble">{comment.comment_text}</div>
-      //   </div>
-      // </div>
-      /* @__PURE__ */ import_react3.default.createElement("div", { className: "mt-4 space-y-4" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "bg-gray-700 p-4 rounded-md space-y-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "flex justify-between" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "font-semibold" }, "John Doe"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "text-gray-400 text-sm" }, "2 hours ago")), /* @__PURE__ */ import_react3.default.createElement("p", null, "This is a great job opportunity!"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "mt-2 pl-4 border-l-2 border-gray-600" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "text-gray-300 mt-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "font-semibold" }, "Jane Smith"), /* @__PURE__ */ import_react3.default.createElement("p", null, "Yes, the company is amazing!")))))
-    )
-  );
-}
-function Job(loadedPost) {
-  const job = loadedPost.job;
-  return /* @__PURE__ */ import_react3.default.createElement("div", { className: "p-4 space-y-6" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "bg-gray-800 text-white rounded-lg shadow-lg p-6 space-y-4" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "flex justify-between items-center" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "text-2xl font-semibold text-purple-500" }, job.job_title)), /* @__PURE__ */ import_react3.default.createElement("p", { className: "text-gray-400" }, job.job_description), /* @__PURE__ */ import_react3.default.createElement("p", { className: "text-gray-500 text-sm" }, "Location: ", job.location), /* @__PURE__ */ import_react3.default.createElement("p", { className: "text-gray-500 text-sm" }, "Qualifications: ", job.qualifications), /* @__PURE__ */ import_react3.default.createElement("div", { className: "flex items-center space-x-4" }, /* @__PURE__ */ import_react3.default.createElement("a", { href: "#", className: "text-green-500 hover:text-green-700" }, "Apply Now")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "mt-4 space-y-4" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "bg-gray-700 p-4 rounded-md space-y-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "flex justify-between" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "font-semibold" }, "John Doe"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "text-gray-400 text-sm" }, "2 hours ago")), /* @__PURE__ */ import_react3.default.createElement("p", null, "This is a great job opportunity!"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "mt-2 pl-4 border-l-2 border-gray-600" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "text-gray-300 mt-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "font-semibold" }, "Jane Smith"), /* @__PURE__ */ import_react3.default.createElement("p", null, "Yes, the company is amazing!")))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "bg-gray-700 p-4 rounded-md space-y-2" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "flex justify-between" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "font-semibold" }, "Sarah Lee"), /* @__PURE__ */ import_react3.default.createElement("div", { className: "text-gray-400 text-sm" }, "5 hours ago")), /* @__PURE__ */ import_react3.default.createElement("p", null, "Is remote work an option?")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "mt-4" }, /* @__PURE__ */ import_react3.default.createElement("textarea", { placeholder: "Add a comment...", className: "w-full p-3 bg-gray-700 rounded-md text-white placeholder-gray-400" }), /* @__PURE__ */ import_react3.default.createElement("button", { className: "mt-2 bg-green-500 hover:bg-green-700 text-white rounded-md px-4 py-2 active:bg-purple-500" }, "Post Comment")))));
-}
-function PostShow() {
-  const [loading, setLoading] = (0, import_react3.useState)(true);
-  const [loadedPost, setLoadedPost] = (0, import_react3.useState)([]);
-  (0, import_react3.useEffect)(() => {
-    const token = document.querySelector("[name=csrf-token]").content;
-    const postId = window.location.href.split("/")[4];
-    axios_default.defaults.headers.common["X-CSRF-TOKEN"] = token;
-    axios_default.get(`/api/v1/posts/${postId}`).then((data) => {
-      console.log(data.data.data.attributes);
-      setLoadedPost(data.data.data.attributes);
-      setLoading(false);
-    }).catch((error) => console.log(error));
-  }, []);
-  if (loading) {
-    return /* @__PURE__ */ import_react3.default.createElement("div", null, "Loading...");
-  } else {
-    return /* @__PURE__ */ import_react3.default.createElement("div", null, /* @__PURE__ */ import_react3.default.createElement("div", null, Job(loadedPost)), /* @__PURE__ */ import_react3.default.createElement("div", null, CommentList(loadedPost)));
-  }
-}
-var postShowContainer = document.getElementById("post-show-container");
-if (postShowContainer) {
-  const postShowRoot = import_client3.default.createRoot(postShowContainer);
-  postShowRoot.render(/* @__PURE__ */ import_react3.default.createElement(PostShow, null));
 }
 /*! Bundled license information:
 
