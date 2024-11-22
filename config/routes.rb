@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get "/posts/:id", to: "posts#show"
   get "/home", to: "home#index"
   get "/login", to: "login#index"
   post "/login", to: "login#user_login"
