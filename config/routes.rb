@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   root "home#index"
   namespace :api do
     namespace :v1 do
-      resources :posts, only: :show
+      resources :posts, only: :show do
+        resources :comments, only: :create
+      end
       resources :jobs do
         collection do
           post :import
