@@ -61,7 +61,6 @@ group :test do
   gem 'vcr', '~> 6.0'
   gem "capybara"
   gem 'shoulda-matchers'
-  gem 'pry'
 end
 
 group :development do
