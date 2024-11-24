@@ -14,7 +14,7 @@ class JobsService
   def process_and_save(job_data)
     return unless job_data
 
-    Job.create!(
+    job = Job.create!(
       job_title: job_data[:title],
       company_name: job_data[:company_name],
       job_description: job_data[:description],
