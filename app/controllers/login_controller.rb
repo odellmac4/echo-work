@@ -7,6 +7,10 @@ class LoginController < ApplicationController
     user = User.find_by(email: user_params[:email])
     if user && user.authenticate(user_params[:password])
       session[:user_id] = user.id
+      cookies[:username] = {
+        value: user.username,
+        expires: 1.week.from_now
+      }
       redirect_to "/home"
     else
       render "/login", status: 422
